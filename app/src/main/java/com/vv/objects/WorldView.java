@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
-public class WorldView extends View {
+public class WorldView extends View{
     Penguin kesha;
     Penguin lusi;
     Penguin[] penguins;
