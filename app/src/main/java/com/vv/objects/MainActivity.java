@@ -23,17 +23,9 @@ public class MainActivity extends AppCompatActivity{
 
             @Override
             public void onClick (View v) {
-                worldView.penguins[worldView.n] =
-                        new Penguin(200, 200);
-                worldView.n++;
+                worldView.createPenguin();
             }
         });
         Log.d(TAG, "onCreate");
     }
-
-          public void plusPenguin(View view) {
-              worldView.penguins[worldView.n] =
-                      new Penguin(200, 200);
-              worldView.n++;
-          }
  }

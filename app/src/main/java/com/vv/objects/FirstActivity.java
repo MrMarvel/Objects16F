@@ -22,7 +22,7 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 String p = text.getText().toString();
-                if (p.equals("1")) {
+                if (p.equals("3883")) {
                     Intent intent = new Intent(FirstActivity.this, MainActivity.class);
                     intent.putExtra("passw", p);
                     startActivity(intent);
