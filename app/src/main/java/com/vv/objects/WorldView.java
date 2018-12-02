@@ -37,6 +37,7 @@ public class WorldView extends View{
         }
         //penguins.add(new Penguin(800,700,0,0, 1, 120));
         //penguins.add(new Penguin(400,300,2.5f,2.0f, 1, 120));
+        //penguins.add(new Penguin(400,300,0,0, 10000, 120));
     }
 
     @Override
