@@ -10,8 +10,12 @@ public class Bear extends Animal{
     private List<Animal> animals = WorldView.animals;
 
     public Bear() {
-        super(2, 60);
+        super(200, 60);
 
+    }
+
+    public Bear(double x, double y, double vx, double vy) {
+        super(x, y, vx, vy, 200, 60);
     }
 
 

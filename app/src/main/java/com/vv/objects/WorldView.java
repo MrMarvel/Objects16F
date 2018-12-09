@@ -42,12 +42,13 @@ public class WorldView extends View {
 
 
         this.setBackgroundColor(Color.BLACK);
-        for (int i = 0; i < 1; i++) {
+        /*for (int i = 0; i < 1; i++) {
             animals.add(new Bear());
-        }
-        //animals.add(new Animal(800,700,0,0, 1, 120));
-        //animals.add(new Animal(400,300,2.5f,2.0f, 1, 120));
-        //animals.add(new Animal(400,300,0,0, 10000, 120));
+        }*/
+        animals.add(new Bear(500,0,0,5));
+        animals.add(new Bear(280,360,8,-4));
+        animals.add(new Bear(660,360,-8,-4));
+        animals.add(new Bear(500,400,0,-5));
     }
 
     @Override

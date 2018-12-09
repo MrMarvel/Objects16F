@@ -9,9 +9,12 @@ import java.util.List;
 public class Penguin extends Animal{
     public List<Animal> animals = WorldView.animals;
 
+    Penguin() {
+        super(200, 60);
+    }
 
-    Penguin(){
-        super(1, 40);
+    Penguin(double x, double y, double vx, double vy) {
+        super(x, y, vx, vy, 200, 60);
     }
 
 
