@@ -1,6 +1,7 @@
 package com.vv.objects;
 
 import android.graphics.Canvas;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -47,16 +48,17 @@ public abstract class Animal {
 
 
     Animal(double m, double R) {
-        this.x = 1794 / 2;
-        this.y = 1080 / 2;
+        this.x = 1280 / 2;
+        this.y = 752 / 4;
         this.vx = vx;
         this.vy = vy;
         this.m = m;
         this.R = R;
 
-        //1080 1794
+        //1080 1794 //1280 752
         int b = 1;
-        while (b == 1) {
+        int tries = 0;
+        while (b == 1 && tries < 1000) {
             b = 0;
             x += (Math.random()*400-200);
             y += (Math.random()*400-200);
@@ -70,9 +72,10 @@ public abstract class Animal {
                     break;
                 }
             }
+            tries++;
         }
-        vx = (Math.random()*4-2);
-        vy = (Math.random()*4-2);
+        vx = (Math.random()*1-0.5);
+        vy = (Math.random()*1-0.5);
     }
 
     public void step() {

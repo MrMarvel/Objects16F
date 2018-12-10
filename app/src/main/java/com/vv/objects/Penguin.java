@@ -11,7 +11,7 @@ public class Penguin extends Animal{
 
 
     Penguin(){
-        super(1, 40);
+        super(10, 40);
     }
 
 

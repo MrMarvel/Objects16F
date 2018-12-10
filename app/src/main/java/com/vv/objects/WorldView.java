@@ -42,8 +42,10 @@ public class WorldView extends View {
 
 
         this.setBackgroundColor(Color.BLACK);
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 4; i++) {
+            animals.add(new Penguin());
             animals.add(new Bear());
+            animals.add(new HatBear());
         }
         //animals.add(new Animal(800,700,0,0, 1, 120));
         //animals.add(new Animal(400,300,2.5f,2.0f, 1, 120));
@@ -74,6 +76,16 @@ public class WorldView extends View {
 
 
     public void createPenguin () {
-        animals.add(new Penguin());
+        switch ((int)Math.random()*3) {
+            case 0:
+                animals.add(new Penguin());
+                break;
+            case 1:
+                animals.add(new Bear());
+                break;
+            case 2:
+                animals.add(new HatBear());
+                break;
+        }
     }
 }
