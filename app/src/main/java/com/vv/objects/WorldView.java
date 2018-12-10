@@ -15,17 +15,17 @@ public class WorldView extends View{
     public WorldView(Context context) {
         super(context);
         this.setBackgroundColor(Color.BLACK);
-        for (int i = 0; i <  10; i++){
-            penguins.add(new Penguin(penguins));
-        }
+        //Пустой
     }
 
     public WorldView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setBackgroundColor(Color.BLACK);
-        for (int i = 0; i < 1; i++){
-            penguins.add(new Penguin(penguins, 40, 100, 1));
-        }
+        /*for (int i = 0; i < 1; i++){
+            Penguin penguin = new Penguin(penguins, 40, 100, 1);
+            penguins.add(penguin);
+            //MainActivity.toast(penguin.x+" "+penguin.y);
+        }*/
         for (int i = 0; i < 3; i++){
             penguins.add(new Penguin(penguins, 40, 100, 2));
         }
@@ -121,8 +121,8 @@ public class WorldView extends View{
             penguin.vx = penguin.m*penguin.vx + penguin2.m*penguin2.vx;
             penguin.vy = penguin.m*penguin.vy + penguin2.m*penguin2.vy;
             penguin.m += penguin2.m;
-            penguin.vx /= penguin.m;
-            penguin.vy /= penguin.m;
+            penguin.vx /= penguin.m / 0.9;
+            penguin.vy /= penguin.m / 0.9;
             dx = penguin.vx - dx;
             dy = penguin.vy - dy;
             penguin.fx += dx;
@@ -138,8 +138,8 @@ public class WorldView extends View{
             penguin2.vx = penguin2.m*penguin2.vx + penguin.m*penguin.vx;
             penguin2.vy = penguin2.m*penguin2.vy + penguin.m*penguin.vy;
             penguin2.m += penguin.m;
-            penguin2.vx /= penguin2.m;
-            penguin2.vy /= penguin2.m;
+            penguin2.vx /= penguin2.m / 0.9;
+            penguin2.vy /= penguin2.m / 0.9;
             dx = penguin2.vx - dx;
             dy = penguin2.vy - dy;
             penguin2.fx += dx;
@@ -215,6 +215,6 @@ public class WorldView extends View{
     }
 
     public void createPenguin () {
-        penguins.add(new Penguin(penguins, 40, 50));
+        penguins.add(new Penguin(penguins, 40, 50, 1));
     }
 }
