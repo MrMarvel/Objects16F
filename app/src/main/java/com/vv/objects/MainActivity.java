@@ -6,14 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity{
-    public static final Point sizeOfScreen = new Point();
     WorldView worldView;
-    final String TAG = "WORK";
+    final String TAG = "MainActivity";
+    public final static Point sizeOfScreen = new Point();
+
+
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,17 +27,6 @@ public class MainActivity extends AppCompatActivity{
         Button button = findViewById(R.id.plusPenguin);
         Intent intent = getIntent();
         String p = intent.getStringExtra("passw");
-
-
-        DisplayMetrics displaymetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-        final int screenWidth = displaymetrics.widthPixels;
-        final int screenHeight = displaymetrics.heightPixels;
-        sizeOfScreen.set(screenWidth, screenHeight);
-        Toast toast = Toast.makeText(MainActivity.this, sizeOfScreen.x+" "+sizeOfScreen.y, Toast.LENGTH_LONG);
-        toast.show();
-
-
         if (p != null) button.setText(p);
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -43,5 +36,10 @@ public class MainActivity extends AppCompatActivity{
             }
         });
         Log.d(TAG, "onCreate");
+
+        Display display = getWindowManager().getDefaultDisplay();
+        display.getSize(sizeOfScreen);
+        Toast.makeText(MainActivity.this, sizeOfScreen.x+" "+sizeOfScreen.y, Toast.LENGTH_LONG).show();
+
     }
  }
