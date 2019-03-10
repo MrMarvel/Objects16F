@@ -10,16 +10,26 @@ public abstract class Animal {
     public double y = 1794 / 2;
     public double vx = 0;
     public double vy = 0;
-    public double fx, fy;
+    public double fx = x;
+    public double fy = y;
     public double m;
     public double R;
+    public boolean stationar = false;
+    public String type = "Animal";
+
     private List<Animal> animals = WorldView.animals;
 
 
+    public void setF(double fx, double fy) {
+        this.fx = fx;
+        this.fy = fy;
+    }
+
     //1080 1794
-    Animal(double m, double R) {
+    Animal(double m, double R, String type) {
         this.m = m;
         this.R = R;
+        this.type = type;
 
         int b = 1;
         while (b == 1) {
@@ -41,13 +51,14 @@ public abstract class Animal {
         vy = (Math.random()*4-2);
     }
 
-    Animal(double x, double y, double vx, double vy, double m, double R) {
+    Animal(double x, double y, double vx, double vy, double m, double R, String type) {
         this.x = x;
         this.y = y;
         this.vx = vx;
         this.vy = vy;
         this.m = m;
         this.R = R;
+        this.type = type;
 
         int b = 1;
         while (b == 1) {

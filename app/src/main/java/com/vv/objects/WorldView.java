@@ -5,10 +5,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
+
+import com.vv.objects.Calculator.Calculator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,14 +57,18 @@ public class WorldView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         for (int i = 0; i <  animals.size(); i++){
-            int c  = 0;
             Calculator.calca(i);
-            c = Calculator.checks(i);
-            if (c == 2) i--;
-            if (c != -1) {
-                animals.get(i).step();
-                animals.get(i).draw(canvas);
-            }
+            Calculator.checkBorder(i);
+        }
+
+        int c  = 0;
+        Calculator.checks();
+        //if (c == 2) i--;
+        //if (c > 0) Toast.makeText(getContext(), ""+Calculator.checks(), Toast.LENGTH_LONG).show();
+
+        for (int i = 0; i <  animals.size(); i++){
+            animals.get(i).step();
+            animals.get(i).draw(canvas);
         }
         invalidate();
     }

@@ -10,11 +10,11 @@ public class Penguin extends Animal{
     public List<Animal> animals = WorldView.animals;
 
     Penguin() {
-        super(200, 60);
+        super(200, 60, "Penguin");
     }
 
     Penguin(double x, double y, double vx, double vy) {
-        super(x, y, vx, vy, 200, 60);
+        super(x, y, vx, vy, 200, 60, "Penguin");
     }
 
 
